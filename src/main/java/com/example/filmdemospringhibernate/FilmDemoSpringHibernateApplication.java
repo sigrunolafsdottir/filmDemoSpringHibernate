@@ -19,9 +19,7 @@ public class FilmDemoSpringHibernateApplication {
     }
 
 
-
-
-    /*
+/*
     @Bean
     public CommandLineRunner demo(BookRepository repository) {
         return (args) -> {
@@ -34,5 +32,6 @@ public class FilmDemoSpringHibernateApplication {
 
         };
     }
+
 */
 }

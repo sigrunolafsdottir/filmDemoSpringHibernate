@@ -20,10 +20,11 @@ public class BookController {
 
     @RequestMapping("books")
     public List<Book> getAllBooks(){
+
         log.info("All books returned");
-        log.error("All books returned in ERROR mess");
-        log.warn("All books returned in WARNING mess");
-        log.debug("All books returned in DEBUG mess");
+      //  log.error("All books returned in ERROR mess");
+      //  log.warn("All books returned in WARNING mess");
+      //  log.debug("All books returned in DEBUG mess");
         return repo.findAll();
     }
 
@@ -51,5 +52,24 @@ public class BookController {
         return repo.findAll();
     }
 
+    @RequestMapping("books/getAuthors")
+    public List<String> getAuthors(){
+        return repo.getAllAuthors();
+    }
+
+    @RequestMapping("books/updateName1")
+    public void updateName1(){
+         repo.updateAuthorName("Dosty", "D");
+    }
+
+    @RequestMapping("books/updateName2")
+    public void updateName2(){
+        repo.updateAuthorName2("D", "Dosty");
+    }
+
+    @RequestMapping("books/getStats")
+    public List<StatUtilDTO> getStats(){
+        return repo.getAuthorStats();
+    }
 
 }
